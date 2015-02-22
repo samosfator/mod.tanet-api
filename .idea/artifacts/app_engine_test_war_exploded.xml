@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="app-engine-test:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/app_engine_test_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="app-engine-test/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="app-engine-test" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="AppEngine API" />
+          <element id="library" level="project" name="AppEngine ORM" />
+          <element id="library" level="project" name="org.jsoup:jsoup:1.8.1" />
+          <element id="library" level="project" name="com.google.code.gson:gson:2.3.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
