@@ -16,13 +16,24 @@ public class SubjectParser {
         subject.setName(parseName(subjectElement));
         subject.setControlType(parseControlType(subjectElement));
         subject.setModules(modulesParser.parseModules());
+        subject.setTotalScore(parseTotalScore(subjectElement));
         return subject;
     }
 
     private String parseName(Element subjectElement) {
         return subjectElement.select("td").eq(0).text();
     }
+
     private String parseControlType(Element subjectElement) {
         return subjectElement.select("td").eq(1).text();
     }
+
+    private int parseTotalScore(Element subjectElement){
+        try {
+            return Integer.parseInt(subjectElement.select("td:last-child").eq(0).text());
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+
 }

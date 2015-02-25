@@ -7,6 +7,7 @@ public class Subject {
     private String name;
     private String controlType;
     private List<Module> modules;
+    private int totalScore;
 
     public String getName() {
         return name;
@@ -30,5 +31,13 @@ public class Subject {
 
     public void setModules(List<Module> modules) {
         this.modules = modules;
+    }
+
+    public int getTotalScore() {
+        return totalScore;
+    }
+
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
     }
 }
