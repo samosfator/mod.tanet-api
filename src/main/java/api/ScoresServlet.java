@@ -32,9 +32,6 @@ public class ScoresServlet extends HttpServlet {
     private Document getMainPageDocument(HttpServletRequest req) throws IOException {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
-        String sessionId = req.getParameter("sessionId");
-        String hashKey = req.getParameter("hashKey");
-        String hashValue = req.getParameter("hashValue");
         String hash = req.getParameter("hash");
 
         Connection.Response loginResponse;
