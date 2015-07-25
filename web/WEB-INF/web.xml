@@ -12,13 +12,4 @@
         <servlet-name>scoresServlet</servlet-name>
         <url-pattern>/api/getScores</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>hashServlet</servlet-name>
-        <servlet-class>main.java.api.HashServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>hashServlet</servlet-name>
-        <url-pattern>/api/getHash</url-pattern>
-    </servlet-mapping>
 </web-app>
