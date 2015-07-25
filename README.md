@@ -1,6 +1,12 @@
 ## /api/getScores
+#### Auth with login and password
 
 `/api/getScores?login=*****&password=*****`
+
+#### Auth with session hash
+
+1. `/api/getHash?login=*****&password=*****`
+2. `/api/getScores?login=*****&hash=******`
 
 Returns JSON with student info and scores.
 

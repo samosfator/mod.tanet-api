@@ -13,6 +13,11 @@ public class ModuleokParser {
         nameGroupParser = new NameGroupParser(document.select(".pageTitle").first());
         firstSemesterParser = new SemesterParser(document.select(".items").first());
         secondSemesterParser = new SemesterParser(document.select(".items").last());
+
+//        System.out.println("----");
+//        System.out.println(document.select(".pageTitle").first());
+//        System.out.println(document.body().html());
+//        System.out.println("----");
     }
 
     public Student constructStudent() {

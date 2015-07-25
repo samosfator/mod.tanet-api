@@ -32,15 +32,28 @@ public class ScoresServlet extends HttpServlet {
     private Document getMainPageDocument(HttpServletRequest req) throws IOException {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
+        String sessionId = req.getParameter("sessionId");
+        String hashKey = req.getParameter("hashKey");
+        String hashValue = req.getParameter("hashValue");
+        String hash = req.getParameter("hash");
 
-        Connection.Response loginResponse = Jsoup.connect("http://mod.tanet.edu.te.ua/site/login")
-                .userAgent("MODULE.OK")
-                .data("LoginForm[login]", login)
-                .data("LoginForm[password]", password)
-                .data("LoginForm[rememberMe]", "1")
-                .data("yt0", "Увійти")
-                .method(Connection.Method.POST)
-                .execute();
+        Connection.Response loginResponse;
+        if (hash == null) {
+            loginResponse = Jsoup.connect("http://mod.tanet.edu.te.ua/site/login")
+                    .userAgent("MODULE.OK_v." + Math.random())
+                    .data("LoginForm[login]", login)
+                    .data("LoginForm[password]", password)
+                    .data("LoginForm[rememberMe]", "1")
+                    .data("yt0", "Увійти")
+                    .method(Connection.Method.POST)
+                    .execute();
+        } else {
+            loginResponse = Jsoup.connect("http://mod.tanet.edu.te.ua/ratings/index")
+                    .userAgent("MODULE.OK_v." + Math.random())
+                    .cookies(CookiesSerializer.deserialize(hash))
+                    .method(Connection.Method.GET)
+                    .execute();
+        }
         return loginResponse.parse();
     }
 }
