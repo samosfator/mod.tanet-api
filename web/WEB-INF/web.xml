@@ -5,11 +5,20 @@
          version="3.1">
 
     <servlet>
-        <servlet-name>scoresServlet</servlet-name>
-        <servlet-class>main.java.api.ScoresServlet</servlet-class>
+        <servlet-name>scoresServletByPassword</servlet-name>
+        <servlet-class>main.java.api.ScoresServletByPassword</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>scoresServlet</servlet-name>
-        <url-pattern>/api/getScores</url-pattern>
+        <servlet-name>scoresServletByPassword</servlet-name>
+        <url-pattern>/api/getScoresByPassword</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>scoresServletByHash</servlet-name>
+        <servlet-class>main.java.api.ScoresServletByHash</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>scoresServletByHash</servlet-name>
+        <url-pattern>/api/getScoresByHash</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -2,7 +2,7 @@
 #### Auth with login and password
 `/api/getScores?login=*****&password=*****`
 
-#### Auth with hashed session cookies
+#### Auth with hashed session phpsessid
 `/api/getScores?login=*****&hash=******`
 
 Returns JSON with student info and scores.
@@ -36,7 +36,7 @@ Returns JSON with student info and scores.
             "subjects": []
         }
     },
-    "cookies": "rO0ABXNyABdqYXZhLnV0aWwuTGlua2VkSGFza...",
+    "phpsessid": "rO0ABXNyABdqYXZhLnV0aWwuTGlua2VkSGFza...",
     "success": true
 }
 ```
