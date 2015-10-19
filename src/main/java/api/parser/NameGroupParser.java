@@ -13,11 +13,20 @@ public class NameGroupParser {
     public String parseName() {
         String rawName = nameGroupElement.text().split("\\(")[0];
         String formattedName = capitalizeString(rawName);
-        return formattedName;
+        if (formattedName.length() == 0) {
+            return "Ім’я Прізвище";
+        } else {
+            return formattedName;
+        }
     }
 
     public String parseGroup() {
-        return nameGroupElement.text().split("\\(")[1].split("\\)")[0];
+        try {
+            return nameGroupElement.text().split("\\(")[1].split("\\)")[0];
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "ГРУПА";
+        }
     }
 
     private String capitalizeString(String string) {
